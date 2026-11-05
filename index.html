@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plain</title>
+<style>
+:root{--bg:#f4f5f8;--cd:#fff;--tx:#12151c;--mu:#667085;--ac:#2f6df6;--bd:#dde1e8;--gd:#d99a00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0d12;--cd:#151922;--tx:#eef0f5;--mu:#98a2b3;--ac:#6b9bff;--bd:#272d3a;--gd:#ffc83d}}
+:root[data-theme="dark"]{--bg:#0b0d12;--cd:#151922;--tx:#eef0f5;--mu:#98a2b3;--ac:#6b9bff;--bd:#272d3a;--gd:#ffc83d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+#app{max-width:620px;margin:0 auto;padding:16px}
+h1{font-size:28px;margin:8px 0 2px;letter-spacing:-.5px}
+.sub{color:var(--mu);margin:0 0 16px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}
+label{display:block;font-size:12px;color:var(--mu);margin:8px 0 3px;text-transform:uppercase;letter-spacing:.5px}
+input,textarea,select{width:100%;font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:10px}
+textarea{min-height:84px;resize:vertical}
+.row{display:flex;gap:8px}.row>*{flex:1}
+button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:11px 16px;background:var(--ac);color:#fff;cursor:pointer}
+button.g{background:transparent;color:var(--tx);border:1px solid var(--bd)}
+button.d{background:transparent;color:#d92d20;border:1px solid var(--bd);padding:6px 10px;font-size:13px}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.track{height:6px;background:var(--bd);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.track i{display:block;height:100%;width:100%;background:var(--ac)}
+.q{font-size:20px;font-weight:600;margin:0 0 10px}
+.chip{display:inline-block;background:var(--bg);border:1px solid var(--bd);border-radius:20px;padding:3px 12px;font-size:14px;margin-bottom:10px}
+.msg{color:#d92d20;min-height:22px;font-size:14px;margin:6px 0}
+.big{font-size:34px;font-weight:700;margin:4px 0}
+.gold{color:var(--gd);font-weight:700}
+.li{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid var(--bd);font-size:15px}
+.li.me{font-weight:700;color:var(--ac)}
+.mu{color:var(--mu);font-size:14px}
+body{background:radial-gradient(circle at 15% 0,color-mix(in srgb,var(--ac) 24%,transparent),transparent 55%),radial-gradient(circle at 95% 100%,color-mix(in srgb,var(--gd) 20%,transparent),transparent 50%),var(--bg) fixed}
+#bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}#app{position:relative;z-index:1}
+.fw{position:absolute;top:100%;font-weight:800;white-space:nowrap;opacity:.16;animation:rise linear infinite}
+@keyframes rise{from{transform:translateY(0) rotate(var(--r))}to{transform:translateY(-125vh) rotate(calc(var(--r)*-1))}}
+.card{border-radius:20px;box-shadow:0 10px 30px rgba(47,109,246,.14)}
+button{background:linear-gradient(135deg,var(--ac),#9b5cf6);box-shadow:0 4px 14px rgba(107,91,246,.35);transition:transform .12s}button:active{transform:scale(.95)}button.g,button.d{background:transparent;box-shadow:none}
+input{font-size:18px}.q{font-size:22px;line-height:1.3}
+.logo{font-size:46px;font-weight:800;margin:0;display:inline-block;background:linear-gradient(90deg,var(--ac),#ff6bb5,var(--gd));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{display:flex;gap:8px;margin:4px 0 14px;flex-wrap:wrap}.tag span{padding:5px 12px;border-radius:20px;background:var(--cd);border:1px solid var(--bd);font-weight:700;animation:wob 2.6s ease-in-out infinite}.tag span:nth-child(2){animation-delay:-1.3s}
+@keyframes wob{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(3deg) translateY(-4px)}}
+.sky{position:relative;height:160px;border-radius:20px;overflow:hidden;margin-bottom:12px;background:linear-gradient(180deg,#4f9cff,#bfe3ff 68%,#ffe9c7);border:1px solid var(--bd);box-shadow:0 10px 30px rgba(47,109,246,.2)}
+.cl{position:absolute;font-style:normal;font-size:38px;opacity:.95;animation:drift linear infinite}.c1{top:8%;animation-duration:13s}.c2{top:42%;font-size:56px;animation-duration:21s;animation-delay:-8s}.c3{top:68%;animation-duration:17s;animation-delay:-3s}
+@keyframes drift{from{left:105%}to{left:-22%}}
+.plane{position:absolute;left:26%;width:88px;transition:bottom 1.3s cubic-bezier(.3,1.5,.5,1);animation:bob 2.4s ease-in-out infinite;filter:drop-shadow(0 4px 4px rgba(0,0,0,.2))}
+@keyframes bob{50%{transform:translateY(-7px) rotate(-4deg)}}
+.pop{animation:pop .55s cubic-bezier(.2,1.8,.4,1)}@keyframes pop{from{transform:scale(.3);opacity:0}}
+.tDialed{color:var(--gd)}.tClose{color:#22c55e}.tWarm{color:#eab308}.tCold{color:#f97316}.tMiss{color:#ef4444}
+.track{height:8px}.track i{background:linear-gradient(90deg,#ef4444,#eab308,#22c55e);transition:width .1s linear}
+.tr{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--bd);animation:rowin .45s both}.tr.tot{font-size:20px;font-weight:800;color:var(--ac)}.tr b{font-variant-numeric:tabular-nums}
+@keyframes rowin{from{opacity:0;transform:translateX(-14px)}}
+.stk{position:fixed;left:50%;top:36%;z-index:50;pointer-events:none;text-align:center;opacity:0;animation:stk 3.8s 1s forwards;filter:drop-shadow(0 10px 18px rgba(0,0,0,.3))}
+.stk span{display:block;font-size:120px;line-height:1}.stk b{display:inline-block;margin-top:4px;font-size:26px;background:var(--cd);color:var(--tx);border:2px solid var(--tx);border-radius:14px;padding:4px 16px}
+@keyframes stk{0%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(-25deg)}12%{opacity:1;transform:translate(-50%,-50%) scale(1.2) rotate(7deg)}20%{transform:translate(-50%,-50%) scale(1) rotate(-4deg)}80%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(4deg)}100%{opacity:0;transform:translate(-50%,-50%) scale(.6)}}
+:root{--bg:#f2f5f0;--cd:#fff;--tx:#1c2a21;--mu:#68786d;--ac:#5f8a6a;--bd:#dce5da;--gd:#b58a28}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1410;--cd:#16211a;--tx:#e8efe9;--mu:#9aab9f;--ac:#8fbf9a;--bd:#243629;--gd:#dcb65a}}
+:root[data-theme="dark"]{--bg:#0d1410;--cd:#16211a;--tx:#e8efe9;--mu:#9aab9f;--ac:#8fbf9a;--bd:#243629;--gd:#dcb65a}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 12% 0,color-mix(in srgb,var(--ac) 22%,transparent),transparent 55%),radial-gradient(circle at 100% 100%,color-mix(in srgb,var(--gd) 12%,transparent),transparent 50%),var(--bg) fixed}
+.card{border-radius:16px;box-shadow:0 6px 24px rgba(40,70,50,.08)}
+button{background:#5f8a6a;color:#fff;box-shadow:0 3px 10px rgba(60,100,75,.25);letter-spacing:.2px}button.g{color:var(--tx)}button.d{color:#b3473b}
+.logo{background:linear-gradient(90deg,var(--ac),var(--gd));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1.5px}
+.sky{background:linear-gradient(180deg,#8fb9a0,#d6e8da 68%,#f3efd8);box-shadow:0 6px 24px rgba(40,70,50,.12)}
+.plane path:nth-of-type(1),.plane path:nth-of-type(2){fill:#5f8a6a}.plane path:nth-of-type(3){fill:#c9ad5c}.plane path:nth-of-type(4){stroke:#5f8a6a}.plane circle{fill:#8fb9a0}
+.track i{background:linear-gradient(90deg,#b95b4e,#d6b34a,#6b9a76)}
+.fw{opacity:.09}.tag span{font-weight:600;font-size:14px;animation-duration:4s}
+</style></head>
+<body><div id="bg"></div><div id="app"></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const SAMPLE=[
+{t:"pick",q:"Name a mountain with a summit closest to the target.",target:"6200",unit:"m",answers:"Denali = 6190\nMount Kilimanjaro = 5895\nMont Blanc = 4806\nMount Everest = 8849\nBen Nevis = 1345\nMatterhorn = 4478\nAconcagua = 6961",fact:"Denali is the highest peak in North America."},
+{t:"pick",q:"Name a country with a population closest to the target.",target:"67000000",unit:"people",answers:"United Kingdom = 67000000\nFrance = 68000000\nGermany = 84000000\nIreland = 5300000\nCanada = 40000000\nJapan = 124000000\nAustralia = 26500000",fact:"Figures are rounded approximations."},
+{t:"est",q:"How many people have walked on the Moon?",target:"12",unit:"",answers:"",fact:"Twelve astronauts walked on the Moon during Apollo 11 to 17."}];
+const DEFAULT=[
+{t:"est",q:"How many 688 buses in the morning to school now?",target:"5",unit:"",answers:"",fact:""},
+{t:"est",q:"How many calories did Dana burn in her 6.03km JP Morgan run?",target:"543",unit:"calories",answers:"",fact:""},
+{t:"est",q:"How many times has the word “zeeb” been sent into cake house chat?",target:"105",unit:"times",answers:"",fact:""},
+{t:"est",q:"What was the number of the room you got sent to if you were naughty in the early jfs days?",target:"17",unit:"",answers:"",fact:""},
+{t:"est",q:"What year did Olly kiss Millie P?",target:"2019",unit:"year",answers:"",fact:""},
+{t:"est",q:"How many views did the Pythagoras theorem TikTok get?",target:"3100000",unit:"views",answers:"",fact:""},
+{t:"nat",q:"What was the nationality of the dwarf Hatty lifted and spun round?",target:"Australian",unit:"",answers:"",fact:"Scored by how far your country is from the right one."}];
+const NAT="Australian|aussie,australia|-25|134;New Zealander|kiwi,new zealand,nz|-41|174;Fijian|fiji|-17.7|178;Papua New Guinean|png,papua new guinea|-6|147;Indonesian|indonesia|-2|118;Filipino|philippines,filipina|13|122;Malaysian|malaysia|4|102;Singaporean|singapore|1.3|103.8;Thai|thailand|15|101;Vietnamese|vietnam|16|108;Chinese|china|35|103;Japanese|japan|36|138;South Korean|korean,korea|36|128;Indian|india|21|78;Pakistani|pakistan|30|70;Sri Lankan|sri lanka|7.9|80.7;Nepalese|nepali,nepal|28|84;Bangladeshi|bangladesh|24|90;Russian|russia|60|90;Turkish|turkey|39|35;Iranian|iran|32|53;Saudi|saudi arabian,saudi arabia|24|45;Emirati|uae|24|54;Egyptian|egypt|26|30;Nigerian|nigeria|9|8;Ghanaian|ghana|8|-1;Kenyan|kenya|0|38;Ethiopian|ethiopia|9|40;South African|south africa|-29|24;Moroccan|morocco|32|-6;British|english,uk,united kingdom,scottish,welsh|54|-2;Irish|ireland|53|-8;French|france|46|2;German|germany|51|10;Spanish|spain|40|-4;Italian|italy|42|12;Dutch|netherlands|52|5;Polish|poland|52|20;Swedish|sweden|62|15;Greek|greece|39|22;Portuguese|portugal|39.5|-8;Ukrainian|ukraine|49|32;Canadian|canada|56|-106;American|usa,us,united states|39|-98;Mexican|mexico|23|-102;Brazilian|brazil|-10|-52;Argentine|argentinian,argentina|-34|-64;Chilean|chile|-30|-71;Peruvian|peru|-10|-76;Colombian|colombia|4|-72;Samoan|samoa|-13.8|-172;Tongan|tonga|-21|-175;Jamaican|jamaica|18|-77".split(";").map(s=>{const a=s.split("|");return{n:a[0],al:a[1].split(","),la:+a[2],lo:+a[3]}});
+function natMatch(s){const t=norm(s);if(!t)return null;let m=NAT.find(x=>norm(x.n)===t||x.al.includes(t));if(m)return m;let b=null,bd=99;for(const x of NAT){const d=lev(norm(x.n),t);if(d<bd){bd=d;b=x}}return bd<=Math.max(1,Math.floor(t.length/5))?b:null}
+function hav(a,b){const R=Math.PI/180,x=Math.sin((b.la-a.la)*R/2)**2+Math.cos(a.la*R)*Math.cos(b.la*R)*Math.sin((b.lo-a.lo)*R/2)**2;return 12742*Math.asin(Math.sqrt(x))}
+function isYr(r){return String(r.unit).trim().toLowerCase()==="year"}
+function scoreR(r,a){if(r.t==="nat"){const tg=natMatch(r.target);if(a===tg)return{tier:"Dialed",pts:125};const p=Math.round(100*Math.exp(-hav(a,tg)/5000));return{tier:p>=83?"Close":p>=55?"Warm":p>=25?"Cold":"Miss",pts:p}}
+const tg=num(r.target);if(isYr(r)){const d=Math.abs(Math.round(a)-tg);if(d===0)return{tier:"Dialed",pts:125};if(d<=3)return{tier:"Close",pts:100-5*d};if(d<=8)return{tier:"Warm",pts:82-(d-4)*5};if(d<=20)return{tier:"Cold",pts:Math.max(25,54-(d-9)*2)};return{tier:"Miss",pts:Math.max(0,24-(d-20))}}
+return score(a,tg)}
+(function(){const w=["brunch bunch 🥞","cake house 🍰"],b=$("#bg");for(let i=0;i<16;i++){const s=document.createElement("span");s.className="fw";s.textContent=w[i%2];s.style.cssText=`left:${Math.random()*85}%;font-size:${16+Math.random()*26}px;animation-duration:${16+Math.random()*18}s;animation-delay:-${Math.random()*30}s;--r:${(Math.random()*16-8).toFixed(1)}deg;color:var(${i%3?"--ac":"--gd"})`;b.appendChild(s)}})();
+function planeY(sink,alt){alt=alt==null?P.alt:alt;return 6+Math.min(70,Math.max(0,alt-(sink||0))/10000*70)}
+function skyHTML(y){if(y==null)y=P.res?planeY(0,P.prev):planeY(0);return `<div class="sky"><i class="cl c1">☁️</i><i class="cl c2">☁️</i><i class="cl c3">☁️</i><svg id="pl" class="plane" style="bottom:${y}%" viewBox="0 0 84 44"><path d="M36 22 L22 2 L32 2 L52 20Z" fill="#2f6df6"/><path d="M36 22 L22 42 L32 42 L52 24Z" fill="#1f55d0"/><path d="M8 22 L3 8 L14 8 L22 18Z" fill="#ff6bb5"/><path d="M6 22 L18 14 L62 14 Q82 17 82 22 Q82 27 62 30 L18 30Z" fill="#fff" stroke="#2f6df6" stroke-width="2"/><circle cx="58" cy="21" r="2.6" fill="#4f9cff"/><circle cx="48" cy="21" r="2.6" fill="#4f9cff"/><circle cx="38" cy="21" r="2.6" fill="#4f9cff"/></svg></div>`}
+const PLAYURL="https://claude.ai/artifact/5dhqwkFM2eZct96inPLBBM";
+function brows(){let h="";for(const m of[0,1]){for(let i=0;i<=18;i++){const t=i/18,u=1-t,x=u*u*6+2*u*t*30+t*t*70,y=u*u*42+2*u*t*6+t*t*26,X=m?160-x:x,s=m?5:-5;h+=`<path d="M${X.toFixed(1)} ${(y-3).toFixed(1)} l${s} -9"/><path d="M${X.toFixed(1)} ${(y+3).toFixed(1)} l${s*.7} 9"/>`}}
+return `<svg viewBox="0 0 160 58" width="250"><g stroke="#2b1b12" stroke-linecap="round" fill="none"><path stroke-width="13" d="M6 42 Q30 6 70 26"/><path stroke-width="13" d="M154 42 Q130 6 90 26"/><g stroke-width="2.6">${h}</g></g></svg>`}
+async function copyRes(){const t=resultTxt(),m=$("#cpm");try{await navigator.clipboard.writeText(t);m.textContent="Copied. Paste it to your friends.";return}catch(e){}try{const a=document.querySelector("textarea[readonly]");a.select();m.textContent=document.execCommand("copy")?"Copied. Paste it to your friends.":"Select the text above and copy it."}catch(e){m.textContent="Select the text above and copy it."}}
+async function shareRes(){try{await navigator.share({text:resultTxt()})}catch(e){}}
+function stickerHTML(i){const S={1:`<svg viewBox="0 0 100 100" width="170"><ellipse cx="22" cy="48" rx="14" ry="30" fill="#6b3f1d" transform="rotate(12 22 48)"/><ellipse cx="78" cy="48" rx="14" ry="30" fill="#6b3f1d" transform="rotate(-12 78 48)"/><circle cx="50" cy="50" r="30" fill="#c98a4b"/><path d="M50 22 Q40 40 44 60 L56 60 Q60 40 50 22Z" fill="#fff"/><ellipse cx="50" cy="68" rx="17" ry="14" fill="#fff"/><circle cx="38" cy="46" r="4" fill="#222"/><circle cx="62" cy="46" r="4" fill="#222"/><ellipse cx="50" cy="62" rx="7" ry="5" fill="#222"/><path d="M50 67 Q50 74 44 75 M50 67 Q50 74 56 75" stroke="#222" stroke-width="2" fill="none"/></svg>`,
+2:`<svg viewBox="0 0 120 50" width="220"><path d="M60 22 C50 8 28 10 18 22 C10 32 4 28 2 20 C6 44 34 46 52 32 C56 29 58 28 60 28 C62 28 64 29 68 32 C86 46 114 44 118 20 C116 28 110 32 102 22 C92 10 70 8 60 22Z" fill="#2b1b12"/></svg><b>the villain</b>`,
+5:brows(),
+4:`<span>🫒</span>`,
+6:`<svg viewBox="0 0 120 80" width="200"><ellipse cx="60" cy="58" rx="56" ry="13" fill="#3a3a44"/><path d="M28 56 L34 20 Q60 10 86 20 L92 56 Q60 66 28 56Z" fill="#4a4a56"/><path d="M29 50 Q60 60 91 50 L92 56 Q60 66 28 56Z" fill="#c0392b"/><path d="M34 20 Q60 30 86 20" stroke="#2c2c34" stroke-width="3" fill="none"/></svg>`};return S[i]?`<div class="stk">${S[i]}</div>`:""}
+function tally(){document.querySelectorAll(".cnt").forEach(el=>{const to=+el.dataset.to,from=+(el.dataset.from||0),d=+el.dataset.d||0;setTimeout(()=>{const t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/900),e=1-Math.pow(1-k,3);el.textContent=fmt(from+(to-from)*e);if(k<1)requestAnimationFrame(f)})(t0)},d)})}
+function homeHTML(){return `${skyHTML(46)}<h1 class="logo">Plain.</h1><div class="tag"><span>brunch bunch 🥞</span><span>cake house 🍰</span></div><p class="sub">${rounds.length} questions. Get as close as you can.</p><div class="card"><p>30 seconds a round. The closer your answer, the higher your plane climbs. One round is golden and counts double. Within 1% is a Dialed.</p><button id="st" style="width:100%">Start</button></div>`}
+function resultTxt(){const e={Dialed:"🟩",Close:"🟢",Warm:"🟡",Cold:"🟠",Miss:"🔴"};return "Plain: "+fmt(Math.max(0,P.alt))+" m ✈️\n"+P.log.map(l=>e[l.tier]).join("")+"\nCan you beat it?"+(PLAYURL?"\n"+PLAYURL:"")}
+let rounds=JSON.parse(JSON.stringify(DEFAULT)),view="home",P=null,timer=null,shareTxt="";
+try{const v=null;if(v){const j=JSON.parse(v);if(Array.isArray(j)&&j.length)rounds=j}}catch(e){}
+const save=()=>{try{localStorage.setItem("plain-rounds2",JSON.stringify(rounds))}catch(e){}};
+const fmt=n=>Math.round(n).toLocaleString("en-GB");
+function num(s){const m=String(s).replace(/,/g,"").trim().toLowerCase().match(/^(-?\d*\.?\d+)\s*(k|thousand|m|million|b|billion)?\b/);if(!m)return NaN;const x=parseFloat(m[1]),u=m[2];return u?x*({k:1e3,thousand:1e3,m:1e6,million:1e6,b:1e9,billion:1e9}[u]):x}
+function parse(t){return String(t||"").split("\n").map(l=>{const i=l.lastIndexOf("=");if(i<1)return null;const v=num(l.slice(i+1));return isNaN(v)?null:{n:l.slice(0,i).trim(),v}}).filter(Boolean)}
+const norm=s=>String(s).toLowerCase().replace(/[^a-z0-9 ]/g,"").replace(/\s+/g," ").trim();
+function lev(a,b){const d=[];for(let i=0;i<=a.length;i++)d[i]=[i];for(let j=1;j<=b.length;j++)d[0][j]=j;for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[a.length][b.length]}
+function match(r,txt){const t=norm(txt);if(!t)return null;const L=parse(r.answers);let m=L.find(x=>norm(x.n)===t);if(m)return m;const c=L.filter(x=>norm(x.n).startsWith(t));if(c.length===1&&t.length>=3)return c[0];let b=null,bd=99;for(const x of L){const d=lev(norm(x.n),t);if(d<bd){bd=d;b=x}}return bd<=Math.max(1,Math.floor(t.length/5))?b:null}
+function score(ans,target){if(!(ans>0)||!(target>0))return{tier:"Miss",pts:0};const r=ans/target,d=Math.abs(Math.log(r));let pts=Math.round(100*Math.exp(-2*d)),tier;
+if(Math.abs(r-1)<=.01){tier="Dialed";pts=Math.max(98,pts)+25}else if(r<=1.1&&r>=.91)tier="Close";else if(r<=1.35&&r>=.74)tier="Warm";else if(r<=2&&r>=.5)tier="Cold";else{tier="Miss";pts=Math.min(pts,24)}return{tier,pts}}
+function valid(){for(const r of rounds){if(!r.q.trim()||(r.t==="nat"?!natMatch(r.target):!(num(r.target)>0)))return false;if(r.t==="pick"&&parse(r.answers).length<2)return false}return rounds.length>0}
+
+function editHTML(){return `<h1>My Plain.</h1><p class="sub">Write your own rounds. Players name the answer closest to the target.</p>
+${rounds.map((r,i)=>`<div class="card" data-i="${i}"><div class="bar"><b>Round ${i+1}</b><button class="d" data-del="${i}">Remove</button></div>
+<label>Type</label><select data-k="t"><option value="pick"${r.t==="pick"?" selected":""}>Name the closest answer</option><option value="est"${r.t==="est"?" selected":""}>Estimate a number</option><option value="nat"${r.t==="nat"?" selected":""}>Nationality (scored by distance)</option></select>
+<label>Prompt</label><textarea data-k="q" style="min-height:60px">${esc(r.q)}</textarea>
+<div class="row"><div><label>${r.t==="pick"?"Target number":r.t==="nat"?"Correct nationality":"Correct answer"}</label><input data-k="target" inputmode="decimal" value="${esc(r.target)}"></div><div><label>Unit (type year for years)</label><input data-k="unit" value="${esc(r.unit)}"></div></div>
+${r.t==="pick"?`<label>Answer bank: one per line, name = value</label><textarea data-k="answers">${esc(r.answers)}</textarea>`:""}
+<label>Fact shown after the round (optional)</label><input data-k="fact" value="${esc(r.fact)}"></div>`).join("")}
+<div class="row"><button class="g" id="add">+ Add round</button><button id="go">Play</button></div>
+<p class="msg" id="em"></p>
+<div class="card"><b>Share or load a set</b><p class="mu">Copy the code to send your set to someone, or paste one in to load it.</p><textarea id="code" placeholder="Paste a set code here">${esc(shareTxt)}</textarea><div class="row" style="margin-top:8px"><button class="g" id="mk">Make code</button><button class="g" id="ld">Load code</button></div></div>`}
+
+function playHTML(){const r=rounds[P.i],n=rounds.length;
+const head=`<div class="bar"><span>Round ${P.i+1}/${n}</span><b id="alt">${fmt(Math.max(0,P.alt))} m</b></div>`+skyHTML();
+if(P.res){const x=P.res,u=r.unit?" "+esc(r.unit):"";let list="";
+if(r.t==="pick"){const L=parse(r.answers).sort((a,b)=>Math.abs(Math.log(a.v/num(r.target)))-Math.abs(Math.log(b.v/num(r.target)))).slice(0,5);list=L.map(a=>`<div class="li${x.name&&norm(x.name)===norm(a.n)?" me":""}"><span>${esc(a.n)}</span><span>${fmt(a.v)}${u}</span></div>`).join("")}
+return head+stickerHTML(P.i)+`<div class="card"><div class="mu">${esc(r.q)}</div><div class="big pop t${x.tier}">${x.tier}${x.tier==="Dialed"?" 🎉":""}</div><div>${esc(x.show)} ${esc(x.tgt)}</div>
+<div class="tally"><div class="tr"><span>Points${P.gold===P.i?' <span class="gold">★ Golden ×2</span>':""}</span><b><span class="cnt" data-to="${x.pts}" data-d="0">0</span></b></div><div class="tr" style="animation-delay:500ms"><span>Climb from points</span><b>+<span class="cnt" data-to="${x.pts*10}" data-d="500">0</span> m</b></div>${x.sink?`<div class="tr" style="animation-delay:1000ms"><span>Sinking</span><b>−<span class="cnt" data-to="${x.sink}" data-d="1000">0</span> m</b></div>`:""}<div class="tr tot" style="animation-delay:1500ms"><span>Total altitude</span><b><span class="cnt" data-from="${P.prev}" data-to="${P.alt}" data-d="1500">${fmt(P.prev)}</span> m</b></div></div>${list}${r.fact?`<p class="mu">${esc(r.fact)}</p>`:""}</div><button id="nx" style="width:100%">${P.i+1<n?"Next round":"Finish"}</button>`}
+return head+`<div class="track"><i id="tb"></i></div><div class="card"><p class="q">${esc(r.q)}</p>${r.t==="pick"?`<div class="chip">Target: ${fmt(num(r.target))}${r.unit?" "+esc(r.unit):""}</div>`:""}
+<input id="ans" autocomplete="off" ${r.t==="pick"?'list="dl" placeholder="Type an answer"':r.t==="nat"?'placeholder="Type a nationality" autocapitalize="words"':'inputmode="decimal" placeholder="Your best guess, e.g. 2.5k"'}>
+${r.t==="pick"?`<datalist id="dl">${parse(r.answers).map(a=>`<option value="${esc(a.n)}">`).join("")}</datalist>`:""}
+<div class="msg" id="pm"></div><button id="sub" style="width:100%">Lock in</button></div>`}
+
+function endHTML(){const tot=Math.max(0,P.alt),pts=P.pts;
+return `${skyHTML(planeY(0))}<h1 class="logo">Landed.</h1><div class="card"><div class="big">${fmt(tot)} m</div><div>${fmt(pts)} points over ${rounds.length} rounds</div>
+<div style="margin-top:8px">${P.log.map((l,i)=>`<div class="li"><span>${i+1}. ${l.tier}${P.gold===i?' <span class="gold">★</span>':""}</span><span>${fmt(l.gain)} m</span></div>`).join("")}</div></div>
+<textarea readonly onclick="this.select()" style="margin-bottom:8px;min-height:90px">${esc(resultTxt())}</textarea><div class="row" style="margin-bottom:8px"><button id="cp">Copy result</button>${navigator.share?'<button class="g" id="sh">Share</button>':""}</div><p class="mu" id="cpm" style="min-height:20px;margin:0 0 8px"></p><button id="again" style="width:100%">Play again</button>`}
+
+function render(){$("#app").innerHTML=view==="home"?homeHTML():view==="edit"?editHTML():view==="play"?playHTML():endHTML();if(view==="play"&&!P.res){const a=$("#ans");a&&a.focus()}}
+function start(){P={i:0,alt:0,pts:0,log:[],gold:Math.floor(Math.random()*rounds.length),res:null,t0:Date.now()};view="play";render();tick()}
+function tick(){clearInterval(timer);P.t0=Date.now();timer=setInterval(()=>{if(view!=="play"||P.res){clearInterval(timer);return}const el=(Date.now()-P.t0)/1000,tb=$("#tb"),sk=Math.min(108,Math.max(0,el-3)*4),pl=$("#pl"),al=$("#alt");if(pl)pl.style.bottom=planeY(sk)+"%";if(al)al.textContent=fmt(Math.max(0,P.alt-sk))+" m";if(tb)tb.style.width=Math.max(0,100-el/30*100)+"%";if(el>=30)resolve(null,"")},100)}
+function resolve(ans,name){clearInterval(timer);const r=rounds[P.i],el=(Date.now()-P.t0)/1000;let sc=ans==null?{tier:"Miss",pts:0}:scoreR(r,ans);
+let pts=sc.pts*(P.gold===P.i?2:1);const sink=ans==null?108:Math.min(108,Math.max(0,el-3)*4);const gain=pts*10-sink;
+P.prev=P.alt;P.alt=Math.max(0,P.alt+gain);P.pts+=pts;const yr=isYr(r),f=v=>yr?String(Math.round(v)):fmt(v),u=r.unit&&!yr?" "+r.unit:"";P.res={tier:sc.tier,pts,gain,sink,ans,name,show:ans==null?"No answer":r.t==="nat"?ans.n:(name?name+" · ":"")+f(ans)+u,tgt:r.t==="nat"?"(answer: "+natMatch(r.target).n+")":"("+(r.t==="pick"?"target ":"actual ")+f(num(r.target))+u+")"};P.log.push({tier:sc.tier,gain});render();setTimeout(()=>{const pl=$("#pl");if(pl)pl.style.bottom=planeY(0)+"%";tally()},80)}
+function submit(){const r=rounds[P.i],v=$("#ans").value,m=$("#pm");if(r.t==="nat"){const a=natMatch(v);if(!a){m.textContent="Enter a nationality, e.g. Canadian.";return}resolve(a,"");return}
+if(r.t==="pick"){const a=match(r,v);if(!a){m.textContent=v.trim()?"Not in this round’s answer bank. Try another.":"Type an answer first.";return}resolve(a.v,a.n)}
+else{const x=num(v);if(isNaN(x)){m.textContent="Enter a number.";return}resolve(x,"")}}
+
+document.addEventListener("input",e=>{const c=e.target.closest("[data-i]");if(!c||!e.target.dataset.k)return;const r=rounds[+c.dataset.i],k=e.target.dataset.k;r[k]=e.target.value;if(k==="t")render();save()});
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="ans")submit()});
+document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+if(b.dataset.del!==undefined){rounds.splice(+b.dataset.del,1);save();render()}
+else if(b.id==="add"){rounds.push({t:"pick",q:"",target:"",unit:"",answers:"",fact:""});save();render()}
+else if(b.id==="go"){if(!valid()){$("#em").textContent="Every round needs a prompt and a target above 0, and answer-bank rounds need at least 2 valid lines (name = value).";return}start()}
+else if(b.id==="sub")submit();else if(b.id==="st")start();else if(b.id==="cp")copyRes();else if(b.id==="sh")shareRes();
+else if(b.id==="nx"){if(P.i+1<rounds.length){P.i++;P.res=null;render();tick()}else{view="end";render()}}
+else if(b.id==="ed"){}
+else if(b.id==="again")start();
+else if(b.id==="mk"){try{shareTxt=btoa(unescape(encodeURIComponent(JSON.stringify(rounds))))}catch(x){shareTxt=""}$("#code").value=shareTxt}
+else if(b.id==="ld"){try{const j=JSON.parse(decodeURIComponent(escape(atob($("#code").value.trim()))));if(!Array.isArray(j)||!j.length)throw 0;rounds=j;save();shareTxt="";render()}catch(x){$("#em").textContent="That code could not be read."}}});
+render();
+</script></body></html>
